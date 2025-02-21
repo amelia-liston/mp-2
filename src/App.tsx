@@ -6,7 +6,7 @@ import {Amiibo} from "./interfaces/Amiibo.ts";
 const ParentDiv=styled.div`
     width: 80vw;
     margin: auto;
-    border: 5px solid purple;
+    border: 5px solid green;
     text-align: center;
     background-color: #D1F6FF;
 `;

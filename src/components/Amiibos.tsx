@@ -16,7 +16,7 @@ const OneAmiiboDiv=styled.div<{character: string}>`
     padding: 2%;
     margin: 1%;
     border: 3px solid lightblue;
-    font: small-caps bold calc(2px + 1vw) "SF Pro Rounded";
+    font: small-caps calc(2px + 1vw) "SF Pro Rounded";
     text-align: center;
     background-color: ${(props) => (props.character === "Isabelle" ? '#FFDA41' : 'white')};
     border-radius: 15px;
@@ -36,7 +36,7 @@ export default function Amiibos(props: {data:Amiibo[]}){
                     <OneAmiiboDiv key={amiibo.head} character={amiibo.character}>
                         <h1>{amiibo.name}</h1>
                         <StyledImage src={amiibo.image} alt={`image of ${amiibo.name}`}/>
-                        <h3>{amiibo.amiiboSeries}</h3>
+                        <h3>Hi! My name is {amiibo.character} and I'm from the Nintendo game{amiibo.amiiboSeries}.</h3>
                     </OneAmiiboDiv>
                     )
                 }
