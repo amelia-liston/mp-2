@@ -8,7 +8,7 @@ const AllAmiibosDiv=styled.div`
     background-color: #D1F6FF;
 `;
 
-const OneAmiiboDiv=styled.div`
+const OneAmiiboDiv=styled.div<{character: string}>`
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +18,8 @@ const OneAmiiboDiv=styled.div`
     border: 3px solid lightblue;
     font: small-caps bold calc(2px + 1vw) "SF Pro Rounded";
     text-align: center;
-    background-color: lavender;
+    background-color: ${(props) => (props.character === "Isabelle" ? '#FFDA41' : 'white')};
+    border-radius: 15px;
 `;
 
 const StyledImage=styled.img`
@@ -32,7 +33,7 @@ export default function Amiibos(props: {data:Amiibo[]}){
             <AllAmiibosDiv>
                 {
                     props.data.map((amiibo: Amiibo) =>
-                    <OneAmiiboDiv key={amiibo.head}>
+                    <OneAmiiboDiv key={amiibo.head} character={amiibo.character}>
                         <h1>{amiibo.name}</h1>
                         <StyledImage src={amiibo.image} alt={`image of ${amiibo.name}`}/>
                         <h3>{amiibo.amiiboSeries}</h3>
