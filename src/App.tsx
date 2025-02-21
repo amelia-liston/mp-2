@@ -7,7 +7,14 @@ const ParentDiv=styled.div`
     width: 80vw;
     margin: auto;
     border: 5px solid purple;
+    text-align: center;
+    background-color: #D1F6FF;
 `;
+
+const StyledHeader=styled.h1`
+    font: bold calc(3px + 3vw) "SF Pro Rounded";
+`;
+
 
 
 function App() {
@@ -29,6 +36,7 @@ function App() {
   return (
     <>
         <ParentDiv>
+            <StyledHeader>Animal Crossing Characters</StyledHeader>
             <Amiibos data={data}/>
         </ParentDiv>
     </>
